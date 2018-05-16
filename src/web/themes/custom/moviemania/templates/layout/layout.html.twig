@@ -1,0 +1,59 @@
+{#
+  header: 'Header'
+  breadcrumb: 'Breadcrumb'
+  left_sidebar: 'Left Sidebar'
+  maincontent: 'Main Content Left'
+  maincontent_right: 'Main Content Right'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer bottom'
+#}
+
+{#
+<header>
+  <h1>MY SITE</h1>
+</header>
+<main>
+  <h1>MY CONTENT</h1>
+</main>
+<footer>
+  <h1>MY FOOTER</h1>
+</footer>
+#}
+
+
+<div class="pagewrapper">
+
+  <div class="highlighted" style="background:red;width:100%;color:#FFF">{{ page.highlighted }}</div>
+
+  <div class="headerwrapper page-row">
+    <div class="header">
+      <div class="header-inner clearfix">
+        {{ page.header }}
+      </div>
+    </div>
+  </div>
+
+  <div class="maincontentwrapper page-row page-row-expanded clearfix">
+      {% block maincontent %}{% endblock %}
+  </div>
+
+  <div class="footer page-row">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+        <div class="footer-top-inner">
+          {{ page.footer_top }}
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          {{ page.footer_bottom }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

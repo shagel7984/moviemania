@@ -1,0 +1,23 @@
+uuid: 7ca7fdbc-7515-4409-809f-6bdb8d33e118
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_netflix
+    - node.type.movie
+  module:
+    - link
+id: node.movie.field_netflix
+field_name: field_netflix
+entity_type: node
+bundle: movie
+label: NetFlix
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

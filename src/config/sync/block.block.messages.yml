@@ -1,0 +1,20 @@
+uuid: 744433c2-a34f-4fb5-bdcb-ad26448a7335
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - moviemania
+id: messages
+theme: moviemania
+region: highlighted
+weight: -10
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }

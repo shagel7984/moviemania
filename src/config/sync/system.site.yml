@@ -1,0 +1,16 @@
+uuid: a7f0f2dc-077f-473b-b92a-9fd956db48b6
+name: 'Movie Mania'
+mail: sebastian.hagel@burda.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/4
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+phone: '0165489'
+phonenumber: '2468'

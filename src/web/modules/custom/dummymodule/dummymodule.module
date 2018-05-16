@@ -1,0 +1,25 @@
+<?php
+
+/*
+ * Implements hook_entity_view()
+ * */
+/*
+function dummymodule_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+
+  if ($entity->getEntityTypeId() === 'node'){
+    $build['awsome'] = [
+      '#markup' => '<marquee>This is awsome from dummymodule</marquee>',
+      '#allowed_tags' => ['marquee'],
+    ];
+  }
+}*/
+
+function dummymodule_hello_world_changecontent(array &$mymarkuparray = NULL){
+  if ($mymarkuparray){
+
+    $mymarkuparray = array(
+      '#title' => 'Hello from Dummymodule!',
+      '#markup' => 'Here is some content from Dummymodule.',
+    );
+  }
+}

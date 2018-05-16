@@ -1,0 +1,73 @@
+custommodule:
+    path: '/custommodule/custompage'
+    defaults:
+        _controller: '\Drupal\custommodule\Controller\CustomMessageController::customfunction'
+    requirements:
+        _permission: 'access content'
+
+
+entity.announcement.add_form:
+  path: '/admin/config/system/site-announcements/add'
+  defaults:
+    _entity_form: 'announcement.add'
+    _title: 'Add announcement'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.announcement.collection:
+  path: '/admin/config/system/site-announcements'
+  defaults:
+    _entity_list: 'announcement'
+    _title: 'announcement configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.announcement.edit_form:
+  path: '/admin/config/system/site-announcements/{announcement}'
+  defaults:
+    _entity_form: 'announcement.edit'
+    _title: 'Edit announcement'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.announcement.delete_form:
+  path: '/admin/config/system/site-announcements/{announcement}/delete'
+  defaults:
+    _entity_form: 'announcement.delete'
+    _title: 'Delete announcement'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+entity.message.add_form:
+  path: '/admin/structure/messages/add'
+  defaults:
+    _entity_form: 'message.add'
+    _title: 'Add message'
+  requirements:
+    _permission: 'administer message'
+
+entity.message.collection:
+  path: '/admin/structure/messages'
+  defaults:
+    _entity_list: 'message'
+    _title: 'Messages'
+  requirements:
+    _permission: 'administer message'
+
+entity.message_type.add_form:
+  path: '/admin/structure/message-types/add'
+  defaults:
+    _entity_form: 'message_type.add'
+    _title: 'Add a message type'
+  requirements:
+    _entity_create_access: 'message_type'
+
+entity.message_type.collection:
+  path: '/admin/structure/message-types'
+  defaults:
+    _entity_list: 'message_type'
+    _title: 'Messages types'
+  requirements:
+    _permission: 'administer message types'
+

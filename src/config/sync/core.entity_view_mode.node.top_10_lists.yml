@@ -1,0 +1,10 @@
+uuid: 3291e0ae-ed55-4b6c-a03d-c1c8c1f5d5f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.top_10_lists
+label: 'Top 10 Lists'
+targetEntityType: node
+cache: true

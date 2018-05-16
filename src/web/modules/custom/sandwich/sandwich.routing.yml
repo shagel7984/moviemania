@@ -1,0 +1,8 @@
+# This defines our example page's path to the routing system.
+plugin_type_example.description:
+  path: '/sandwich/plugin-type-example'
+  defaults:
+    _controller: '\Drupal\sandwich\Controller\SandwichController::description'
+    _title: 'Plugin Type Example'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,79 @@
+# core.entity_form_display.node.car_brand.default.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.car_brand.field_marke_information
+#    - field.field.node.car_brand.field_additional_field_1
+#    - field.field.node.car_brand.field_additional_field_2
+    - node.type.car_brand
+  module:
+    - file
+    - path
+    - text
+_core:
+  default_config_hash: qZE-qJ04DTTNggVVQdVOPQmpE_I69GQ_LqB32kXivVg
+id: node.car_brand.default
+targetEntityType: node
+bundle: car_brand
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_brand_information:
+    weight: 7
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+  field_additional_field_1:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_additional_field_2:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  path:
+    type: path
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,6 @@
+custom_event_listener:
+    path: '/custom-event-listener'
+    defaults:
+        _controller: '\Drupal\custom_event_listener\Controller\CustomController::customfunction'
+    requirements:
+        _permission: 'access content'

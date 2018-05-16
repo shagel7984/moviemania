@@ -1,0 +1,30 @@
+uuid: 0b2bcfc0-10a0-4fe5-b5e3-31a677ca24d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recent_lists
+  module:
+    - system
+    - views
+  theme:
+    - moviemania
+id: views_block__recent_lists_block_1
+theme: moviemania
+region: maincontent
+weight: -7
+provider: null
+plugin: 'views_block:recent_lists-block_1'
+settings:
+  id: 'views_block:recent_lists-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,7 @@
+name: HBM Privacy
+type: module
+description: HBM Privacy - provides a cronjob that pulls data protection from external links and saves the information to the local filesystem
+package: Other
+core: 8.x
+dependencies:
+  - drupal:file

@@ -1,0 +1,141 @@
+<?php
+
+use Drupal\Core\Template\Attribute; // this should be at the top of your MY_THEME.theme file
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function moviemania_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $logged_in = \Drupal::currentUser()->isAuthenticated();
+  if ($logged_in) {
+    $suggestions[] = 'page__' . 'authenticated';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function moviemania_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $logged_in = \Drupal::currentUser()->isAuthenticated();
+  if ($logged_in) {
+    $suggestions[] = 'node__' . 'authenticated';
+  }
+}
+
+function moviemania_preprocess_field(&$variables, $hook) {
+  $element = $variables['element']['#field_name'];
+  // If there is not an existing class array, create an empty array.
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+  // Merge with any classes that may have been set by other hook_preprocess_menu invocations
+  $variables['attributes']['class'] = array_merge($variables['attributes']['class'], [$element]);
+}
+
+function moviemania_preprocess_block(&$variables){
+  $routeParams = \Drupal::routeMatch()->getParameters();
+  $entity = NULL;
+  foreach ($routeParams as $rp) {
+    if ($rp instanceof \Drupal\Core\Entity\EntityInterface) {
+      $entity = $rp;
+      break;
+    }
+  }
+
+  if (isset($entity)) {
+    $entityTypeId = $entity->getEntityTypeId();
+    $bundle = $entity->bundle();
+    $variables['attributes']['class'][] = $entityTypeId.'_'.$bundle;
+  }
+/*
+  $variables['test1'] = [
+    '#theme' => 'item_list',
+    '#items' => [
+      t('test item 1'),
+      t('test item 2'),
+    ],
+    '#title' => 'My custom item list'
+  ];
+*/
+
+
+  //$node = \Drupal::request()->attributes->get('node');
+  /*$nid = $node->id();
+  \Drupal::entityTypeManager();
+  $eManager = \Drupal::entityTypeManager();
+  $storage = $eManager->getStorage('node');
+  $completeNode = $storage->load($nid);
+  $completeNode->getEntityTypeId();*/
+
+  // If the current user is logged in, and they are the owner of the node
+  // being viewed, add a suffix to the label variable.
+  /*if ($variables['logged_in'] == TRUE && $variables['node']->getOwnerId() == $variables['user']->id()) {
+    $variables['label'] = $variables['node']->label().' [you are the author]';
+  }
+
+  $variables['testproducts'] = ['test1' => ['test1.1','test1.2','test1.3'],'test2' => [],'test3' => [],'test4' => [],'test5' => ['test5.1','test5.2','test5.3']];
+  */
+  //$myarray = ['test','test1','test2'];
+  //print "<pre>";print_r($myarray);print "</pre>";
+}
+
+
+function moviemania_preprocess_hello_world_marquee(&$variables) {
+  // The $variables array contains the same keys as in the hook_theme() implementation
+  // by default. Any new values added will be new variables available in the
+  // template file.
+  $variables['attributes']['direction'] = 'right';
+  //$variables['direction'] = $variables['attributes']['direction'];
+  // Convert attributes to a proper \Drupal\Core\Template\Attribute object.
+  //$variables['attributes'] = new Attribute($variables['attributes']);
+}
+
+/*
+function moviemania_preprocess_hello_world_mymarquee(&$variables) {
+
+}
+*/
+
+
+
+/*
+function moviemania_preprocess_hello_world_marquee(&$variables) {
+  // The $variables array contains the same keys as in the hook_theme() implementation
+  // by default. Any new values added will be new variables available in the
+  // template file.
+  $variables['direction'] = $variables['attributes']['direction'];
+  // Convert attributes to a proper \Drupal\Core\Template\Attribute object.
+  $variables['attributes'] = new Attribute($variables['attributes']);
+}*/
+
+
+/*
+function moviemania_preprocess_breadcrumb(&$variables) {
+  if ($variables['breadcrumb']) {
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+    if (!empty($page_title)) {
+      $variables['breadcrumb'][] = [
+        'text' => $page_title,
+        'attributes' => new Attribute(['class' => ['active']])
+      ];
+    }
+  }
+}
+
+
+
+function moviemania_block_poweredby_prerender(array $build) {
+  $build['content']['#markup'] = 'Your text';
+  return $build;
+}
+
+function moviemania_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  if ($block->getBaseId() === 'system_powered_by_block') {
+    $build['#pre_render'][] = '_yourmodule_block_poweredby_prerender';
+  }
+}*/
+

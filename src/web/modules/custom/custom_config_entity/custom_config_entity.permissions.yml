@@ -1,0 +1,4 @@
+#Define the administer permission for the my config entity.
+'administer myconfigentities':
+  title: 'Administer Myconfigentities'
+  description: Create and edit myconfigentities.

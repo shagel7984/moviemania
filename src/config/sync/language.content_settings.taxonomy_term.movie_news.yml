@@ -1,0 +1,11 @@
+uuid: df937828-f13f-4850-a92e-1b8283243251
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.movie_news
+id: taxonomy_term.movie_news
+target_entity_type_id: taxonomy_term
+target_bundle: movie_news
+default_langcode: site_default
+language_alterable: false

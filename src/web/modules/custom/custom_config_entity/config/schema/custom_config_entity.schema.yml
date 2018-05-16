@@ -1,0 +1,19 @@
+custom_config_entity.myconfigentity.*:
+  type: mapping
+  label: 'My Config Entity'
+  mapping:
+    id:
+      type: string
+      label: 'My Config Entity id'
+    uuid:
+      type: string
+      label: 'UUID'
+    label:
+      type: label
+      label: 'Label'
+    floopy:
+      type: boolean
+      label: 'Floopy'
+    langcode:
+      type: string
+      label: 'Default language'

@@ -1,0 +1,27 @@
+uuid: 13704cf8-fd85-47f3-a968-6743d09214a2
+langcode: en
+status: true
+dependencies: {  }
+name: news_front_page_block
+label: 'News Front Page Block'
+tabs:
+  3a70a398-35c9-47b6-be60-fd1be7329e1b:
+    uuid: 3a70a398-35c9-47b6-be60-fd1be7329e1b
+    id: views_tab
+    title: Movie
+    weight: 1
+    data:
+      view_name: latest_news
+      view_display: page_3
+      view_arg: ''
+  146c8b21-c59b-4b13-9d98-b8796c799d48:
+    uuid: 146c8b21-c59b-4b13-9d98-b8796c799d48
+    id: views_tab
+    title: 'Celebrity News'
+    weight: 2
+    data:
+      view_name: latest_news
+      view_display: page_4
+      view_arg: ''
+event: click
+style: default

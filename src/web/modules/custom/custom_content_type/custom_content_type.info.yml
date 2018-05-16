@@ -1,0 +1,5 @@
+name: 'Custom Content Entity'
+type: module
+description: 'Demonstrates how to create a content type.'
+package: Custom
+core: 8.x

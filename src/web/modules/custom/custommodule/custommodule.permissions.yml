@@ -1,0 +1,12 @@
+view custommessage entity:
+  title: 'View Custom Message entity'
+add custommessage entity:
+  title: 'Add Custom Message entity'
+edit custommessage entity:
+  title: 'Edit Custom Message Entity'
+delete custommessage entity:
+  title: 'Delete Custom Message entity'
+administer custommessage entity:
+  title: 'Administer Custom Message entity'
+  restrict access: TRUE
+

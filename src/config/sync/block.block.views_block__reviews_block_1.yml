@@ -1,0 +1,30 @@
+uuid: 7e480f45-65eb-46ba-ac45-fbe9792b17af
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.reviews
+  module:
+    - system
+    - views
+  theme:
+    - moviemania
+id: views_block__reviews_block_1
+theme: moviemania
+region: maincontent
+weight: -4
+provider: null
+plugin: 'views_block:reviews-block_1'
+settings:
+  id: 'views_block:reviews-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /moviereviews
+    negate: false
+    context_mapping: {  }

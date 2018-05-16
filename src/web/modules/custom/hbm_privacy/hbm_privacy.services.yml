@@ -1,0 +1,3 @@
+services:
+ hbm_privacy.hbmprivacyservice:
+  class: '\Drupal\hbm_privacy\HbmServices\HbmPrivacyService'

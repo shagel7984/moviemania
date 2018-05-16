@@ -1,0 +1,14 @@
+{
+  "name": "drupal/my_test_module",
+  "type": "drupal-module",
+  "description": "Test module for the Content Type generator  (generate:entity:bundle).",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/my_test_module",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/my_test_module",
+    "source": "http://cgit.drupalcode.org/my_test_module"
+  },
+  "require": { }
+}

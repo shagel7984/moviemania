@@ -1,0 +1,38 @@
+uuid: bffd2d50-35f2-49da-a6c5-9a6fdd65bdb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_highlighted
+  content:
+    - 'node:article:3ad8b09f-ca34-48d3-9162-7a64125918b0'
+    - 'node:article:e5cc2356-f5bb-4314-886c-10e7b3394471'
+    - 'node:page:a789b006-e669-4136-8c34-01054dd63ee4'
+  module:
+    - user
+id: user.user.field_highlighted
+field_name: field_highlighted
+entity_type: user
+bundle: user
+label: Highlighted
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: e5cc2356-f5bb-4314-886c-10e7b3394471
+  -
+    target_uuid: 3ad8b09f-ca34-48d3-9162-7a64125918b0
+  -
+    target_uuid: a789b006-e669-4136-8c34-01054dd63ee4
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: my_content_reference_view
+      display_name: entity_reference_1
+      arguments:
+        - '41'
+        - '42'
+field_type: entity_reference

@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains customce.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function customce_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the customce module.
+    case 'help.page.customce':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Custom Content Entity') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function customce_theme() {
+  return [
+    'customce' => [
+      'render element' => 'children',
+    ],
+  ];
+}

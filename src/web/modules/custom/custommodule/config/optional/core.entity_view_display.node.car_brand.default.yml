@@ -1,0 +1,42 @@
+# core.entity_view_display.node.car_brand.default.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.car_brand.field_marke_information
+#    - field.field.node.car_brand.field_additional_field_1
+#    - field.field.node.car_brand.field_additional_field_2
+    - node.type.car_brand
+  module:
+    - file
+    - text
+    - user
+_core:
+  default_config_hash: Nfnv6VMugBKl6EOqi_U0I_LQ1ZQpbNDN3a9GXHWUBz4
+id: node.car_brand.default
+targetEntityType: node
+bundle: car_brand
+mode: default
+content:
+  field_brand_information:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_additional_field_1:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_additional_field_2:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  links:
+    weight: 100
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: 6c46fb52-f2db-421b-8e76-4d42b3aa062e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wordfilter
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wordfilter:
+    active_wordfilter_configs: {  }
+name: 'My Export Content Type'
+type: my_export_content_type
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

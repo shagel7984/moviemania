@@ -1,0 +1,5 @@
+name: 'customce'
+type: module
+description: 'My Custom Content Entity'
+core: 8.x
+package: 'Custom'

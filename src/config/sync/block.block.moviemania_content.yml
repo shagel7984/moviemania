@@ -1,0 +1,22 @@
+uuid: 21437c5d-6af2-4c13-aebf-3f72ffb361d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - moviemania
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: moviemania_content
+theme: moviemania
+region: maincontent
+weight: -10
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

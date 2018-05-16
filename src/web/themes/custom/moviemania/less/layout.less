@@ -1,0 +1,445 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  width: 100%;
+}
+a{
+  color:@textcolor;
+}
+
+.pagewrapper{
+  display:table;
+  height:100%;
+  min-height:100%;
+  padding:0;
+  width:100%;
+  max-width:1200px;
+  margin:0px auto;
+}
+.page-row {
+  display: table-row;
+}
+.page-row-expanded {
+  height: 100%;
+}
+
+/*HEADER*/
+.header{
+  width: 100%;
+  background:@headerfooterbg;
+  /*padding:20px 25px 20px 25px;*/
+  position:fixed;
+
+  z-index:99;
+  .header-inner{
+    position:relative;
+
+
+    #block-moviemania-branding{
+      width:100%;
+      float:left;
+      padding:15px 25px 15px 25px;
+
+      .logo{
+        float:left;
+        .logo-inner{
+          a{
+            display:inline-block;
+            img{
+              width:100%;
+              max-width:200px;
+              min-width:200px;
+              height:auto;
+            }
+          }
+        }
+      }
+      .headertrigger{
+        float:right;
+        .headertrigger-inner{
+          .block-moviemania-main-menu-trigger{
+            float:left;
+            .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+              background-color:#FFF;
+            }
+          }
+          .block-moviemania-searchbox-trigger{
+            float:left;
+            padding:13px;
+            .searchboxtrigger{
+              border: 1px solid #b2b2b2;
+              width:31px;
+              height:31px;
+              background:@headerfooterbg url('../images/lupe.png') no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+    .block-moviemania-main-menu{
+      width:100%;
+      clear:both;
+      background:@textcolor;
+      display:none;
+      .block-moviemania-main-menu-outer{
+        .block-moviemania-main-menu-inner{
+          ul{
+            margin:0px;
+            padding:10px 0 10px 0;
+            list-style:none;
+            display:block;
+            li {
+              padding:0 15px 0 15px;
+              border:0px;
+              a{
+                color:@navigationcolor;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #block-moviemania-search{
+      width:100%;
+      clear:both;
+      margin-bottom:15px;
+      display:none;
+      .block-moviemania-search-outer{
+        .block-moviemania-search-inner {
+          .form-item {
+            display:block;
+            input.form-search {
+              width: 100%;
+              border: 1px solid #b2b2b2;
+              padding-right:35px;
+            }
+          }
+          .form-actions {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            .form-submit {
+              width: 28px;
+              height: 28px;
+              border: 0px;
+              background: url('../images/searchsubmit.png') no-repeat;
+              text-indent: 300px;
+              padding: 0px;
+              margin: 0px;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*MAIN CONTENT*/
+.maincontentwrapper{
+  margin-top:150px;
+  .maincontentwrapper-inner{
+    padding:0 25px 25px 25px;
+    margin-top:150px;
+    .breadcrumb {
+      width:100%;
+    }
+    #blocktabs-news_front_page_block, #block-blocktabssomeblocktab {
+      .views-field-title{
+        a{
+          font-weight:bold;
+        }
+      }
+
+
+      .ui-state-active,
+      .ui-widget-content .ui-state-active,
+      .ui-widget-header .ui-state-active,
+      a.ui-button:active,
+      .ui-button:active,
+      .ui-button.ui-state-active:hover{
+        background:@textcolor;
+        border:none;
+      }
+    }
+
+
+
+  }
+  .maincontentwrapper-inner.frontpage{
+
+    .maincontent{
+      float:none;
+      width:100%;
+      .maincontent-inner{
+        padding-right:0px;
+      }
+    }
+
+    .maincontent_right{
+      width:100%;
+      float:none;
+      .maincontent_right-inner{
+        padding-left:0px;
+      }
+    }
+  }
+
+  .maincontentwrapper-inner.normalpage{
+    .maincontent{
+      width:100%;
+      .maincontent-inner{
+
+      }
+    }
+  }
+}
+
+/*FOOTER*/
+.footer{
+  background:@headerfooterbg;
+  .footer-inner{
+    padding-top:25px;
+    padding-bottom:25px;
+    .footer-top{
+      .footer-top-inner{
+        .block-moviemania-footer-menu{
+          text-align:center;
+          ul{
+            margin:0px;
+            padding:0px;
+            list-style:none;
+            display:inline-block;
+            li {
+              float:left;
+              padding:0 15px 0 15px;
+              border-right:1px solid @navigationcolor;
+              &:first-child{
+                padding:0 15px 0 0px;
+              }
+              &:last-child{
+                border-right:0px;
+                padding:0 0px 0 15px;
+              }
+              a{
+                color:@navigationcolor;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom{
+      .footer-bottom-inner{
+        background:@copyrightbg;
+      }
+    }
+
+  }
+}
+
+.pager{
+  text-align:center;
+  ul{
+    list-style:none;
+    display:inline-block;
+    li{
+      float:left;
+      padding:0 5px 0 5px;
+    }
+    li.is-active{
+      a{
+        font-weight:bold;
+      }
+    }
+  }
+}
+
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  /*body{
+    background:red;
+  }*/
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  /*body{
+    background:teal;
+  }*/
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  /*body{
+    background:blue;
+  }*/
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  /*body{
+    background:lightseagreen;
+  }*/
+  .header{
+    position:relative;
+    .header-inner{
+      #block-moviemania-branding{
+        width:20%;
+        float:left;
+        .headertrigger{
+          display:none;
+        }
+      }
+
+      .block-moviemania-main-menu{
+        float:left;
+        display:block;
+        width:60%;
+        clear:none;
+        background:none;
+        margin-top: 44px;
+        .block-moviemania-main-menu-outer{
+          padding-left:25px;
+          height:100%;
+          .block-moviemania-main-menu-inner{
+            ul{
+              margin:0px;
+              padding:0px;
+              list-style:none;
+              display:inline-block;
+              li {
+                float:left;
+                padding:0 15px 0 15px;
+                border-right:1px solid @navigationcolor;
+                &:first-child{
+                  padding:0 15px 0 0px;
+                }
+                &:last-child{
+                  border-right:0px;
+                  padding:0 0px 0 15px;
+                }
+                a{
+                  color:@navigationcolor;
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      #block-moviemania-search{
+        width:20%;
+        clear:none;
+        margin-bottom:0px;
+        margin-top:40px;
+        display:block;
+        float:right;
+        .block-moviemania-search-outer{
+          .block-moviemania-search-inner {
+            .form-item {
+              display:block;
+              input.form-search {
+                width: 80%;
+                float:left;
+                border: 1px solid #b2b2b2;
+                padding-right:0px;
+              }
+            }
+            .form-actions {
+              position:relative;
+              float:left;
+              .form-submit {
+                width: 28px;
+                height: 28px;
+                border: 1px solid #b2b2b2;
+                background: url('../images/lupe.png') no-repeat;
+                text-indent: 300px;
+                padding: 0px;
+                margin: 0px;
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  /*MAIN CONTENT*/
+  .maincontentwrapper{
+    margin-top:150px;
+    .maincontentwrapper-inner{
+      padding:25px 0 25px 0;
+      margin-top:0px;
+      .maincontent_left{
+        float:left;
+        width:20%;
+      }
+      .maincontent_middle{
+        float:left;
+        width:80%;
+        .breadcrumb {
+          width:100%;
+        }
+      }
+    }
+    .maincontentwrapper-inner.frontpage{
+        .maincontent{
+          float:left;
+          width:50%;
+          .maincontent-inner{
+            padding-right:15px;
+          }
+        }
+
+        .maincontent_right{
+          width:50%;
+          float:left;
+          .maincontent_right-inner{
+            padding-left:15px;
+          }
+        }
+    }
+
+    .maincontentwrapper-inner.normalpage{
+      .maincontent{
+        width:100%;
+      }
+    }
+  }
+
+
+
+}

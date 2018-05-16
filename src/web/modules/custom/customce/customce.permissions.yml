@@ -1,0 +1,30 @@
+add custom ce entities:
+  title: 'Create new Custom ce entities'
+
+administer custom ce entities:
+  title: 'Administer Custom ce entities'
+  description: 'Allow to access the administration form to configure Custom ce entities.'
+  restrict access: true
+
+delete custom ce entities:
+  title: 'Delete Custom ce entities'
+
+edit custom ce entities:
+  title: 'Edit Custom ce entities'
+
+view published custom ce entities:
+  title: 'View published Custom ce entities'
+
+view unpublished custom ce entities:
+  title: 'View unpublished Custom ce entities'
+
+view all custom ce revisions:
+  title: 'View all Custom ce revisions'
+
+revert all custom ce revisions:
+  title: 'Revert all Custom ce revisions'
+  description: 'Role requires permission <em>view Custom ce revisions</em> and <em>edit rights</em> for custom ce entities in question or <em>administer custom ce entities</em>.'
+
+delete all custom ce revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Custom ce revisions</em> and <em>delete rights</em> for custom ce entities in question or <em>administer custom ce entities</em>.'

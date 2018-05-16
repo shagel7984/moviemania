@@ -1,0 +1,5 @@
+name: 'My Test Module'
+type: module
+description: 'Test module for the Content Type generator  (generate:entity:bundle).'
+core: 8.x
+package: 'Custom'

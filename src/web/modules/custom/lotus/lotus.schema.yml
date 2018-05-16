@@ -1,0 +1,16 @@
+lotus.lotus.*:
+  type: config_entity
+  label: 'lotus config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    content_type:
+      type: string
+      label: 'Content Type'
+    email:
+      type: email
+      label: 'Email'

@@ -1,0 +1,28 @@
+uuid: eb7df50e-2ada-4520-85e8-95382b09b67c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviews
+    - node.type.list
+    - node.type.movie
+id: node.list.field_reviews
+field_name: field_reviews
+entity_type: node
+bundle: list
+label: Reviews
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      movie: movie
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

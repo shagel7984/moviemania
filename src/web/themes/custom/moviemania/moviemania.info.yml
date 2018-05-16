@@ -1,0 +1,29 @@
+name: 'Moviemania'
+type: theme
+description: 'A movietheme'
+core: 8.x
+base theme: false
+screenshot: screenshot_moviemania.png
+regions:
+  header: 'Header'
+  breadcrumb: 'Breadcrumb'
+  maincontent_left: 'Main Content Left'
+  maincontent: 'Main Content'
+  maincontent_right: 'Main Content Right'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer bottom'
+  highlighted: 'Highlighted'
+  #secondary_menu: 'Secondary menu'
+  #sidebar_second: 'Sidebar second'
+libraries:
+  - moviemania/moviemania
+  - moviemania/bootstrap
+#  - icecream/emoji
+#libraries-override:
+#    # Replace the core modernizr library with our custom build.
+#    core/modernizr:
+#      js:
+#        assets/vendor/modernizr/modernizr.min.js: js/modernizr-custom.js
+
+
+

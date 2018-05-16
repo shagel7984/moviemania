@@ -1,0 +1,39 @@
+hello_world:
+    path: '/hello/world'
+    defaults:
+        _controller: '\Drupal\hello_world\Controller\CustomController::customfunction'
+    requirements:
+        _permission: 'access content'
+
+    #path: '/hello/world'
+    #defaults:
+    #    _controller: '\Drupal\hello_world\Controller\HelloWorldController::hello'
+    #requirements:
+    #    _permission: 'access content'
+
+hello_world_description:
+  path: '/hello/world/description'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\PageExampleController::description'
+    _title: 'Page Example'
+  requirements:
+    _permission: 'access content'
+
+# If the user accesses http://example.com/?q=examples/page-example/simple,
+# the routing system will look for a route with that path. In this case it will
+# find a match, and execute the _controller callback. Access to this path
+# requires "access simple page" permission.
+hello_world_simple:
+  path: '/hello/world/simple'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\PageExampleController::simple'
+    _title: 'Simple - no arguments'
+  requirements:
+    _permission: 'access simple page'
+
+hello_world_arguments:
+  path: '/hello/world/arguments/{first}/{second}'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\PageExampleController::arguments'
+  requirements:
+    _permission: 'access arguments page'

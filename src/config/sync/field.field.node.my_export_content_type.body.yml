@@ -1,0 +1,22 @@
+uuid: b94a62a7-9d49-440f-84c4-e6506c2bcfda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.my_export_content_type
+  module:
+    - text
+id: node.my_export_content_type.body
+field_name: body
+entity_type: node
+bundle: my_export_content_type
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

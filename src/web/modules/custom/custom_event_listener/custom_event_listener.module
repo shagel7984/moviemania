@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_event_listener.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_event_listener_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_event_listener module.
+    case 'help.page.custom_event_listener':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom Event Listener Example') . '</p>';
+      return $output;
+
+    default:
+  }
+}

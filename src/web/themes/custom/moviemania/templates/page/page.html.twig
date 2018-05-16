@@ -1,0 +1,46 @@
+{% extends "@moviemania/layout/layout.html.twig" %}
+{% block maincontent %}
+  <div class="maincontentwrapper-inner clearfix normalpage">
+  {#
+  <div class="pagetitle">
+    <h1>This is a normal page</h1>
+  </div>
+  #}
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      {{ page.breadcrumb }}
+    </div>
+  </div>
+
+  <div class="maincontent_left">
+    <div class="maincontent_left-inner">
+      {{ page.maincontent_left }}
+    </div>
+  </div>
+
+  <div class="maincontent_middle">
+    <div class="maincontent">
+      <div class="maincontent-inner">
+        {{ page.maincontent }}
+      </div>
+    </div>
+  </div>
+</div>
+{#
+<div class="pagetitle col-md-12">
+    <h1>This is a normal page</h1>
+  </div>
+
+  <div class="breadcrumb col-md-12">
+   <div class="breadcrumb-inner">
+     {{ page.breadcrumb }}
+   </div>
+  </div>
+
+  <div class="maincontent col-md-12">
+    <div class="maincontent-inner">
+      {{ page.maincontent }}
+    </div>
+  </div>
+#}
+ {% endblock %}

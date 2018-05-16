@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains my_test_module.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function my_test_module_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the my_test_module module.
+    case 'help.page.my_test_module':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Test module for the Content Type generator  (generate:entity:bundle).') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function my_test_module_theme() {
+  return [
+    'my_test_module' => [
+      'render element' => 'children',
+    ],
+  ];
+}

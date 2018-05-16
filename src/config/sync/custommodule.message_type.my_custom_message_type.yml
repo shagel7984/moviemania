@@ -1,0 +1,6 @@
+uuid: f96d7024-1d98-47c8-8c14-8e08adb6aaa3
+langcode: en
+status: true
+dependencies: {  }
+id: my_custom_message_type
+label: 'My custom message type'

@@ -1,0 +1,23 @@
+uuid: 866401e7-5c7a-4d21-820c-9b7acc938aa4
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: pathtest
+label: 'Movie Review Terms'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'moviereviews/[term:name]'
+selection_criteria:
+  0f348534-0bae-4a5c-b0f5-05b74057fc33:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      movie_genres: movie_genres
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 0f348534-0bae-4a5c-b0f5-05b74057fc33
+selection_logic: and
+weight: -5
+relationships: {  }

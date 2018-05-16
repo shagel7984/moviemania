@@ -1,0 +1,27 @@
+# Custom ce routing definition
+custom_ce.settings_tab:
+  route_name: custom_ce.settings
+  title: 'Settings'
+  base_route: custom_ce.settings
+
+entity.custom_ce.canonical:
+  route_name: entity.custom_ce.canonical
+  base_route: entity.custom_ce.canonical
+  title: 'View'
+
+entity.custom_ce.edit_form:
+  route_name: entity.custom_ce.edit_form
+  base_route: entity.custom_ce.canonical
+  title: 'Edit'
+
+entity.custom_ce.version_history:
+  route_name: entity.custom_ce.version_history
+  base_route: entity.custom_ce.canonical
+  title: 'Revisions'
+
+entity.custom_ce.delete_form:
+  route_name:  entity.custom_ce.delete_form
+  base_route:  entity.custom_ce.canonical
+  title: Delete
+  weight: 10
+

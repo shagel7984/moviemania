@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_customemail
+    - node.type.my_export_content_type
+id: node.my_export_content_type.field_customemail
+field_name: field_customemail
+entity_type: node
+bundle: my_export_content_type
+label: customemail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

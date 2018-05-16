@@ -1,0 +1,20 @@
+uuid: 621037fe-23b2-4aae-9ec9-389574f11cc0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_mycustomtext2
+field_name: field_mycustomtext2
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

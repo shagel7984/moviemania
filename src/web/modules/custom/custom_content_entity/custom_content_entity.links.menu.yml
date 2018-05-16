@@ -1,0 +1,6 @@
+entity.importer.collection:
+  title: 'Importer'
+  route_name: entity.importer.collection
+  description: 'List Importer entities'
+  parent: system.admin_structure
+  weight: 99

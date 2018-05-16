@@ -1,0 +1,22 @@
+uuid: 2bf6b26a-959c-4d91-b87b-120073385424
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - moviemania
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: moviemania_help
+theme: moviemania
+region: highlighted
+weight: -11
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

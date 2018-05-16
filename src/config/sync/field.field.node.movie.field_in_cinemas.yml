@@ -1,0 +1,23 @@
+uuid: 5e2de79a-73f0-4dec-a47f-904cc51c3262
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_in_cinemas
+    - node.type.movie
+  module:
+    - link
+id: node.movie.field_in_cinemas
+field_name: field_in_cinemas
+entity_type: node
+bundle: movie
+label: 'In Cinemas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

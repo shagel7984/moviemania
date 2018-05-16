@@ -1,0 +1,14 @@
+{
+  "name": "drupal/default_content_entity_module",
+  "type": "drupal-module",
+  "description": "My Awesome Module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/default_content_entity_module",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/default_content_entity_module",
+    "source": "http://cgit.drupalcode.org/default_content_entity_module"
+  },
+  "require": { }
+}

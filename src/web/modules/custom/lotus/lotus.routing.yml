@@ -1,0 +1,32 @@
+entity.lotus.collection:
+  path: '/admin/config/system/lotus'
+  defaults:
+    _entity_list: 'lotus'
+    _title: 'Lotus configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+entity.lotus.add_form:
+  path: '/admin/config/system/lotus/add'
+  defaults:
+    _entity_form: 'lotus.add'
+    _title: 'Add Lotus configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.lotus.edit_form:
+  path: '/admin/config/system/lotus/{lotus}'
+  defaults:
+    _entity_form: 'lotus.edit'
+    _title: 'Edit Lotus configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.lotus.delete_form:
+  path: '/admin/config/system/lotus/{lotus}/delete'
+  defaults:
+    _entity_form: 'lotus.delete'
+    _title: 'Delete Lotus configuration'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,12 @@
+hello_world.description:
+  title: Moviemania Page
+  route_name: hello_world_description
+  expanded: TRUE
+  menu_name: main
+
+hello_world.simple:
+  title: Moviemania Simple - no arguments
+  route_name: hello_world_simple
+  parent: hello_world.description
+  menu_name: main
+

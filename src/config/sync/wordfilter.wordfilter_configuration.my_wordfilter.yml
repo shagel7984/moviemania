@@ -1,0 +1,16 @@
+uuid: 3f33f449-aca2-433d-afc7-9ab7226611cc
+langcode: en
+status: true
+dependencies: {  }
+id: my_wordfilter
+label: 'My Wordfilter'
+process_id: default
+items:
+  -
+    delta: 0
+    substitute: Sebastian
+    filter_words: 'Lorem, Vivamus'
+  -
+    delta: 1
+    substitute: Max
+    filter_words: 'Integer,tincidunt'

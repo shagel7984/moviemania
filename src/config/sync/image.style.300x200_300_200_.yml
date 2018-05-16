@@ -1,0 +1,15 @@
+uuid: d9486f30-71cc-4955-8113-2a9daa51dfb1
+langcode: en
+status: true
+dependencies: {  }
+name: 300x200_300_200_
+label: '300x200 (300×200)'
+effects:
+  bd4e120b-c2ad-48d8-860e-e7e6e3ed03a5:
+    uuid: bd4e120b-c2ad-48d8-860e-e7e6e3ed03a5
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: 200
+      upscale: false

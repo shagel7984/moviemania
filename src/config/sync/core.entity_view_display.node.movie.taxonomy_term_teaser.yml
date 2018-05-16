@@ -1,0 +1,123 @@
+uuid: ff07778e-9cb4-411a-8b2e-35d6551a8858
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.taxonomy_term_teaser
+    - field.field.node.movie.body
+    - field.field.node.movie.field_buy_on_dvd
+    - field.field.node.movie.field_geners
+    - field.field.node.movie.field_imdb
+    - field.field.node.movie.field_in_cinemas
+    - field.field.node.movie.field_movieimage
+    - field.field.node.movie.field_netflix
+    - field.field.node.movie.field_release_date
+    - field.field.node.movie.field_review
+    - field.field.node.movie.field_reviewtext
+    - field.field.node.movie.field_traillers
+    - image.style.300x200_300_200_
+    - node.type.movie
+  module:
+    - datetime
+    - image
+    - link
+    - text
+    - user
+id: node.movie.taxonomy_term_teaser
+targetEntityType: node
+bundle: movie
+mode: taxonomy_term_teaser
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_buy_on_dvd:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_geners:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_in_cinemas:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_movieimage:
+    weight: 5
+    label: hidden
+    settings:
+      image_style: 300x200_300_200_
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_netflix:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_release_date:
+    weight: 4
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_reviewtext:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_traillers:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_imdb: true
+  field_review: true
+  langcode: true
+  links: true

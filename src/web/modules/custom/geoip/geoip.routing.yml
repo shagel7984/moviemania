@@ -1,0 +1,6 @@
+geoip:
+    path: '/geoip'
+    defaults:
+        _controller: '\Drupal\geoip\Controller\GeoLocateController::geoLocate'
+    requirements:
+        _permission: 'access content'

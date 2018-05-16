@@ -1,0 +1,10 @@
+uuid: 3e89bcc2-a92f-41a3-9c1d-200310ef5a0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.lat
+label: 'Latest Reviews'
+targetEntityType: node
+cache: true

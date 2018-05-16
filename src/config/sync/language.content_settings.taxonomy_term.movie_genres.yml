@@ -1,0 +1,11 @@
+uuid: d3bdd36c-0460-41ee-9471-6af3cebb0ed7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.movie_genres
+id: taxonomy_term.movie_genres
+target_entity_type_id: taxonomy_term
+target_bundle: movie_genres
+default_langcode: site_default
+language_alterable: false

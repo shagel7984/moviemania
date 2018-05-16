@@ -1,0 +1,67 @@
+uuid: 68f2ed4f-cf8f-4eff-96b6-a4f13ace8683
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.my_export_content_type.body
+    - field.field.node.my_export_content_type.field_customcheckbox
+    - field.field.node.my_export_content_type.field_customemail
+    - field.field.node.my_export_content_type.field_customfile
+    - field.field.node.my_export_content_type.field_customimage
+    - node.type.my_export_content_type
+  module:
+    - file
+    - image
+    - text
+    - user
+id: node.my_export_content_type.default
+targetEntityType: node
+bundle: my_export_content_type
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_customcheckbox:
+    weight: 102
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_customemail:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_customfile:
+    weight: 103
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_customimage:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

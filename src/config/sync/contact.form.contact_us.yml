@@ -1,0 +1,12 @@
+uuid: 6ed376bb-c416-445e-9880-99503f4c5c5c
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us
+label: 'Contact Us'
+recipients:
+  - sebastian.hagel@burda.com
+reply: 'Update: Thank you for contacting us, we will reply shortly'
+weight: 0
+message: ''
+redirect: ''

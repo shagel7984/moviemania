@@ -1,0 +1,14 @@
+
+# Custom ce menu items definition
+entity.custom_ce.collection:
+  title: 'Custom ce list'
+  route_name: entity.custom_ce.collection
+  description: 'List Custom ce entities'
+  parent: system.admin_structure
+  weight: 100
+
+custom_ce.admin.structure.settings:
+  title: 'Custom ce settings'
+  description: 'Configure Custom ce entities'
+  route_name: custom_ce.settings
+  parent: system.admin_structure

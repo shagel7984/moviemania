@@ -1,0 +1,33 @@
+<?php
+/*
+  function mycontactmodule_update_8008(){
+    $contact_form = \Drupal\contact\Entity\ContactForm::load('contact_us_form');
+    $contact_form->setReply(t('Update 8008: Thank you for contacting us, we will reply shortly'));
+    $contact_form->save();
+  }
+
+
+  function mycontactmodule_install(){
+
+    $contact_form = \Drupal\contact\Entity\ContactForm::load('contact_us_form');
+    var_dump($contact_form);
+    if ($contact_form){
+      $contact_form->delete();
+    }
+
+    //Set the site name
+    \Drupal::configFactory()
+      ->getEditable('system.site')
+      ->set('name','Drupal 8 Cookbook')
+      ->save();
+  }
+
+  function mycontactmodule_uninstall(){
+    $contact_form = \Drupal\contact\Entity\ContactForm::load('contact_us_form');
+    if ($contact_form){
+      var_dump($contact_form);
+      $contact_form->delete();
+    }
+  }
+
+*/

@@ -1,0 +1,12 @@
+entity_types:
+  - block_content
+  - comment
+  - contact_message
+  - file
+  - node
+  - shortcut
+  - taxonomy_term
+  - user
+  - menu_link_content
+_core:
+  default_config_hash: 4HHP96M4EvFXLlTv2x7sF5zHnLIi_Hw_ckmE76MB6r4

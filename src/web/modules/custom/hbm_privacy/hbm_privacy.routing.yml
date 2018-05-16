@@ -1,0 +1,14 @@
+hbm_privacy.settings:
+  path: 'admin/config/system/hbm-privacy-form'
+  defaults:
+    _title: 'HBM Privacy Settings'
+    _form: '\Drupal\hbm_privacy\Form\HbmPrivacyConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+hbm_privacy:
+    path: '/datenschutz'
+    defaults:
+        _controller: '\Drupal\hbm_privacy\Controller\HbmPrivacyController::showHbmPrivacy'
+    requirements:
+        _permission: 'access content'

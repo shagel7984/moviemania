@@ -1,0 +1,10 @@
+drupal.form:
+  path: '/drupal-example-form'
+  #path: 'admin/drupal-example-form'
+  options:
+    _admin_route: TRUE
+  defaults:
+    _title: 'Example form'
+    _form: '\Drupal\drupalform\Form\ExampleConfigForm'
+  requirements:
+    _access: 'TRUE'

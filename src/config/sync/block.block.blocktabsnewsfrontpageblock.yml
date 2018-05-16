@@ -1,0 +1,28 @@
+uuid: 9c15dac1-6589-4cab-9e23-a3fcaaa73829
+langcode: en
+status: true
+dependencies:
+  config:
+    - blocktabs.blocktabs.news_front_page_block
+  module:
+    - blocktabs
+    - system
+  theme:
+    - moviemania
+id: blocktabsnewsfrontpageblock
+theme: moviemania
+region: maincontent
+weight: -5
+provider: null
+plugin: 'blocktabs_block:news_front_page_block'
+settings:
+  id: 'blocktabs_block:news_front_page_block'
+  label: 'Blocktabs:News Front Page Block'
+  provider: blocktabs
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

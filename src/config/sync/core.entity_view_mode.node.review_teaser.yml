@@ -1,0 +1,10 @@
+uuid: 55e04504-9fb0-4c6d-aaf6-3b34ab92cb1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.review_teaser
+label: 'Review Teaser'
+targetEntityType: node
+cache: true

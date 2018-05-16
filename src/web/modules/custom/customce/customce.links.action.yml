@@ -1,0 +1,5 @@
+entity.custom_ce.add_form:
+  route_name: entity.custom_ce.add_form
+  title: 'Add Custom ce'
+  appears_on:
+    - entity.custom_ce.collection

@@ -1,0 +1,6 @@
+uuid: 4ee3ebd4-5bb4-4cf2-bf0e-58278a2eaf7b
+langcode: en
+status: true
+dependencies: {  }
+id: simple_type_2
+label: 'Simple Type 2'

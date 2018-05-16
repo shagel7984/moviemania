@@ -1,0 +1,5 @@
+entity.lotus_add_form:
+  route_name: 'entity.lotus.add_form'
+  title: 'Add Lotus Configuration'
+  appears_on:
+    - entity.lotus.collection

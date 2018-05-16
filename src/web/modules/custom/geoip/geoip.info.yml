@@ -1,0 +1,5 @@
+name: 'geoip'
+type: module
+description: 'My Geoip module'
+core: 8.x
+package: 'Custom'

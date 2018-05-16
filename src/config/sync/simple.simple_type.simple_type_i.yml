@@ -1,0 +1,6 @@
+uuid: 080be383-5922-4c58-ab89-e80f7a8b3404
+langcode: en
+status: true
+dependencies: {  }
+id: simple_type_i
+label: 'Simple Type I'

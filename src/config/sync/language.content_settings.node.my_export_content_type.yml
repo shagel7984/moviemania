@@ -1,0 +1,11 @@
+uuid: fe834925-dce2-4c1c-b817-3da051da1240
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.my_export_content_type
+id: node.my_export_content_type
+target_entity_type_id: node
+target_bundle: my_export_content_type
+default_langcode: site_default
+language_alterable: false

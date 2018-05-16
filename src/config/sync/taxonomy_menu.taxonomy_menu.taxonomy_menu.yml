@@ -1,0 +1,14 @@
+uuid: cbfbfb81-ac95-40e5-b94d-923de5ef6f0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.my-taxmenu
+    - taxonomy.vocabulary.movie_genres
+id: taxonomy_menu
+label: 'Taxonomy Menu'
+vocabulary: movie_genres
+menu: my-taxmenu
+expanded: false
+depth: 0
+menu_parent: 'my-taxmenu:'

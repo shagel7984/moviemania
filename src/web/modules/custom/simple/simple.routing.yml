@@ -1,0 +1,6 @@
+simple:
+    path: '/simple/custompage'
+    defaults:
+        _controller: '\Drupal\simple\Controller\CustomSimpleController::customfunction'
+    requirements:
+        _permission: 'access content'

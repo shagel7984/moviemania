@@ -1,0 +1,75 @@
+<?php
+
+/*
+ * Implements hook_entity_view()
+ * */
+/*
+function hello_world_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+
+  if ($entity->getEntityTypeId() === 'node'){
+    $build['awsome'] = [
+      '#markup' => '<marquee>This is awsome from hello_world entity hook</marquee>',
+      '#allowed_tags' => ['marquee'],
+    ];
+  }
+}
+*/
+
+function hello_world_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+
+  /*$build['awsome'] = [
+    '#markup' => '<marquee>This is awsome from hello_world node hook</marquee>',
+    '#allowed_tags' => ['marquee'],
+  ];
+  $build['body'][0]['#text'] = "hello_world_node_view";
+  $build['body'][1] = $build['body'][0];
+  $build['body'][1]['#text'] = "xxxxxxx";*/
+}
+
+/*
+function hello_world_menu_local_actions_alter(&$local_actions) {
+  var_dump($local_actions);
+  die();
+}
+*/
+
+function hello_world_menu_links_discovered_alter(&$links) {}
+function hello_world_contextual_links_view_alter(&$element, $items) {}
+function hello_world_menu_local_tasks_alter(&$data, $route_name) {}
+
+/*
+ * neuen render hook erzeugen
+ */
+function hello_world_theme() {
+  return [
+    'hello_world_marquee' => [
+      'variables' => [
+        'content' => '',
+        'attributes' => array(),
+      ],
+    ],
+    'hello_world_custom' => [
+      'variables' => [
+        'content' => '',
+        'attributes' => array(),
+      ],
+    ],
+
+    'hello_world_mymarquee' => [
+      'variables' => [
+        'content' => '',
+        'attributes' => []
+        /*'content' => t('Hello world IIIIIIIIII!'),
+        'attributes' => [
+          'direction' => 'right'
+        ]*/
+      ],
+    ],
+
+  ];
+
+
+
+
+
+}

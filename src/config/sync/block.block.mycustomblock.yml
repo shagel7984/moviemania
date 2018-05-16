@@ -1,0 +1,20 @@
+uuid: a4e6376f-a7d4-45fc-a49d-8f6725ff16d6
+langcode: en
+status: false
+dependencies:
+  module:
+    - sandwich
+  theme:
+    - moviemania
+id: mycustomblock
+theme: moviemania
+region: maincontent_left
+weight: -6
+provider: null
+plugin: my_custom_block
+settings:
+  id: my_custom_block
+  label: 'My custom block'
+  provider: sandwich
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,6 @@
+view module pages:
+  title: 'View my module pages'
+  description: 'Allows users to view pages provided by mymodule'
+
+#permission_callbacks:
+#  - 'Drupal\filter\FilterPermission:permissions'

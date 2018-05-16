@@ -1,0 +1,22 @@
+{#
+/**
+ * @file custom_ce.html.twig
+ * Default theme implementation to present Custom ce data.
+ *
+ * This template is used when viewing Custom ce pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_custom_ce()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('custom_ce') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

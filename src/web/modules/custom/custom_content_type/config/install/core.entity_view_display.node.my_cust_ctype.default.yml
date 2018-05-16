@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - field.field.node.my_cust_ctype.body
+        - node.type.my_cust_ctype
+    module:
+        - text
+        - user
+id: node.my_cust_ctype.default
+targetEntityType: node
+bundle: my_cust_ctype
+mode: default
+content:
+    body:
+        label: hidden
+        type: text_default
+        weight: 101
+        settings: {  }
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

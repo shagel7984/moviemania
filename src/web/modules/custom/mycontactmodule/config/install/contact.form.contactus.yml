@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {}
+id: contact_us_form
+label: 'Contact Us powered by module'
+recipients:
+  - sebastian@example.com
+reply: 'Thank you for contacting us.'
+weight: 0

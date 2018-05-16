@@ -1,0 +1,5 @@
+id: my_custom_config_entity
+uuid: d94fe4da-8f9e-4326-857c-a94ea55217a4
+label: 'My Custom Config Entity'
+floopy: true
+langcode: en

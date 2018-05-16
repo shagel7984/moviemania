@@ -1,0 +1,30 @@
+uuid: 5223bc6a-fb74-4243-a70d-94d4d812fac7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_reviews
+  module:
+    - system
+    - views
+  theme:
+    - moviemania
+id: views_block__latest_reviews_block_1
+theme: moviemania
+region: maincontent_right
+weight: 0
+provider: null
+plugin: 'views_block:latest_reviews-block_1'
+settings:
+  id: 'views_block:latest_reviews-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

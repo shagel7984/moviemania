@@ -1,0 +1,11 @@
+services:
+  custom_event_listener.anonymousRedirectEventListener:
+    class: '\Drupal\custom_event_listener\EventSubscriber\RequestSubscriber'
+    arguments: [ '@current_route_match', '@current_user' ]
+    tags:
+      - { name: event_subscriber }
+
+  custom_event_listener.customEventSubscriber:
+    class: '\Drupal\custom_event_listener\EventSubscriber\CustomEventSubscriber'
+    tags:
+      - { name: event_subscriber }

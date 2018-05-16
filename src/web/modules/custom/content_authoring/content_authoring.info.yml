@@ -1,0 +1,14 @@
+name: 'Content Authoring'
+description: 'this is my custom feature'
+type: module
+core: 8.x
+dependencies:
+  - comment
+  - field
+  - image
+  - node
+  - path
+  - rdf
+  - text
+  - user
+  - views

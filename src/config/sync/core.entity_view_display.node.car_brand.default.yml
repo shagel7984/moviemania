@@ -1,0 +1,46 @@
+uuid: ebc895ff-6bbf-4c0e-82d1-e269028499b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.car_brand.body
+    - field.field.node.car_brand.field_brand_information
+    - node.type.car_brand
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 0CLT7i7AWZ1o169-rWth5UwVr53Vm5BEC-NpGcurKhA
+id: node.car_brand.default
+targetEntityType: node
+bundle: car_brand
+mode: default
+content:
+  field_additional_field_1:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_additional_field_2:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_brand_information:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  body: true
+  langcode: true

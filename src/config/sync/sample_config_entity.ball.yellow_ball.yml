@@ -1,0 +1,11 @@
+uuid: 8827b09c-ab4a-44c0-9464-b7972c532238
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JVspoexL5cFbcdF3OQmRDSwpT9iGpjfttG0LK3wsuqk
+id: yellow_ball
+label: 'Yellow Ball'
+weight: null
+color: yellow
+point_value: null

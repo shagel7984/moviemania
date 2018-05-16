@@ -1,0 +1,23 @@
+services:
+ hello_world.say_hello:
+  class: '\Drupal\hello_world\Services\HelloService'
+
+ hello_world.say_goodbye:
+  class: '\Drupal\hello_world\Services\GoodbyeService'
+
+ hello_world.breadcrumb:
+  class: '\Drupal\hello_world\Services\BreadcrumbService'
+
+ hello_world.customEventListener:
+  class: '\Drupal\hello_world\Events\CustomEventListener'
+  arguments: []
+  tags:
+    - { name: event_subscriber }
+
+ hello_world.anonymousRedirectEventListener:
+  class: '\Drupal\hello_world\EventSubscriber\RequestSubscriber'
+  arguments: ['@current_route_match', '@current_user']
+  tags:
+    - { name: event_subscriber }
+
+

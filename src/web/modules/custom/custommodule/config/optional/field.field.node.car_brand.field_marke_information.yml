@@ -1,0 +1,22 @@
+# field.field.node.car_brand.field_brand_information.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marke_information
+    - node.type.car_brand
+  module:
+    - text
+id: node.car_brand.field_marke_information
+field_name: field_brand_information
+entity_type: node
+bundle: car_brand
+label: 'Brand Information'
+description: 'More specific information about the car brand'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

@@ -1,0 +1,28 @@
+uuid: ea77a366-a166-4018-9f51-9bd987e7d39e
+langcode: en
+status: true
+dependencies:
+  config:
+    - blocktabs.blocktabs.some_blocktab
+  module:
+    - blocktabs
+    - system
+  theme:
+    - moviemania
+id: blocktabssomeblocktab
+theme: moviemania
+region: maincontent
+weight: -6
+provider: null
+plugin: 'blocktabs_block:some_blocktab'
+settings:
+  id: 'blocktabs_block:some_blocktab'
+  label: 'Blocktabs:News Block '
+  provider: blocktabs
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false
+    context_mapping: {  }

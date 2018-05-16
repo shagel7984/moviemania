@@ -1,0 +1,4 @@
+name: 'Lotus'
+description: 'Provides a configuration entity to store email per node type'
+type: module
+core: 8.x

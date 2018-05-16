@@ -1,0 +1,31 @@
+uuid: 6b4b98b6-6bed-4726-8311-ce5fc1f6acac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.list.body
+    - field.field.node.list.field_is_a_top_10_list
+    - field.field.node.list.field_reviews
+    - node.type.list
+  module:
+    - text
+    - user
+id: node.list.teaser
+targetEntityType: node
+bundle: list
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_is_a_top_10_list: true
+  field_reviews: true
+  langcode: true
+  links: true

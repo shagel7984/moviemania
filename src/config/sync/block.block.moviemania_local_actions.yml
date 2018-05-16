@@ -1,0 +1,20 @@
+uuid: 66890ffb-3870-437c-96c4-24e2ba4cad3c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - moviemania
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: moviemania_local_actions
+theme: moviemania
+region: header
+weight: -9
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

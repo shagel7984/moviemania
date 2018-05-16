@@ -1,0 +1,45 @@
+{% extends "@moviemania/block/brandingblock.html.twig" %}
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup themeable
+ */
+#}
+{% block content %}
+  {% if site_logo %}
+    <div class="logo">
+      <div class="logo-inner">
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+          <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="headertrigger">
+    <div class="headertrigger-inner">
+      <div class="block-moviemania-searchbox-trigger">
+        <button class="searchboxtrigger" type="button"></button>
+      </div>
+
+      <div class="block-moviemania-main-menu-trigger">
+        <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

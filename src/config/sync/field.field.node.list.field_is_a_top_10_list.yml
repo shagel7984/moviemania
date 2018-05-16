@@ -1,0 +1,23 @@
+uuid: e821b005-a7f8-44f9-ba44-bb79def6135f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_a_top_10_list
+    - node.type.list
+id: node.list.field_is_a_top_10_list
+field_name: field_is_a_top_10_list
+entity_type: node
+bundle: list
+label: 'Is a top 10 List'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

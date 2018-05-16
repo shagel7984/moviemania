@@ -1,0 +1,9 @@
+entity.product.collection_tab:
+  route_name: entity.product.collection
+  base_route: system.admin_content
+  title: 'Products'
+
+entity.product_type.collection_tab:
+  route_name: entity.product_type.collection
+  base_route: system.admin_content
+  title: 'Product Types'

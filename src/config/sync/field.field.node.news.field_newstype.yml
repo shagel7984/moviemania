@@ -1,0 +1,29 @@
+uuid: 05490a85-d4e5-43e5-848d-e554d9dcb7b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_newstype
+    - node.type.news
+    - taxonomy.vocabulary.movie_news
+id: node.news.field_newstype
+field_name: field_newstype
+entity_type: node
+bundle: news
+label: Newstype
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      movie_news: movie_news
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

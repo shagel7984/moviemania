@@ -1,0 +1,33 @@
+uuid: e3c74fab-f5c3-4c1a-83b0-15fa28bdebea
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.car_brand.body
+    - field.field.node.car_brand.field_brand_information
+    - node.type.car_brand
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: Habjx8g_OzOPgKFkxIwqap9BmacXGxpJUFxpRuqyIyw
+id: node.car_brand.teaser
+targetEntityType: node
+bundle: car_brand
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_brand_information: true
+  langcode: true

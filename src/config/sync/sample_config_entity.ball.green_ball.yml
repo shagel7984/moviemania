@@ -1,0 +1,11 @@
+uuid: 31b3a877-a407-43df-b314-fc4ca3481527
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7DASU6MsrXPdlhZCBQXz_sJkFjqBMu0q9Tyl38_tSyI
+id: green_ball
+label: 'Green Ball'
+weight: null
+color: green
+point_value: null

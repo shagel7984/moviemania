@@ -1,0 +1,20 @@
+uuid: 5cd4c8c8-0569-4f2b-897c-6586e9200471
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - moviemania
+id: breadcrumbs
+theme: moviemania
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: visible
+visibility: {  }

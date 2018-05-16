@@ -1,0 +1,21 @@
+uuid: a8a7f5f3-3f9d-43cd-9d37-e0aaea3bc368
+langcode: en
+status: true
+dependencies:
+  module:
+    - custommodule
+  theme:
+    - moviemania
+id: copyright
+theme: moviemania
+region: footer_bottom
+weight: 0
+provider: null
+plugin: copyright_block
+settings:
+  id: copyright_block
+  label: Copyright
+  provider: custommodule
+  label_display: '0'
+  company_name: 'Hubert Burda Media Internet Magazin Verlag'
+visibility: {  }

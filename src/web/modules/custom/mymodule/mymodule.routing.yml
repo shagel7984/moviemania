@@ -1,0 +1,19 @@
+mymodule.myfirstpage:
+  path: '/mymodule/mypage'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyPageController::customPage'
+    _title: 'My custom page'
+  requirements:
+    _permission: 'view module pages'
+
+mymodule.mysecondpage:
+  path: '/mymodule/mysecond/{name}'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyPageController::secondPage'
+    _title: 'My second page'
+    name: ''
+  requirements:
+    _permission: 'access content'
+
+route_callbacks:
+  - '\Drupal\mymodule\Routing\CustomRoutes::routes'

@@ -1,0 +1,21 @@
+uuid: 59cda9aa-4b8f-444d-ae85-110483ea3c7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewtext
+    - node.type.movie
+  module:
+    - text
+id: node.movie.field_reviewtext
+field_name: field_reviewtext
+entity_type: node
+bundle: movie
+label: Review
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

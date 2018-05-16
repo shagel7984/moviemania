@@ -1,0 +1,6 @@
+custom_content_entity:
+    path: '/custom-content-entity/productimport'
+    defaults:
+        _controller: '\Drupal\custom_content_entity\Controller\ProductController::customfunction'
+    requirements:
+        _permission: 'access content'

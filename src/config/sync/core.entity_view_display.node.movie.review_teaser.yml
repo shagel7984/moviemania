@@ -1,0 +1,101 @@
+uuid: 04123408-90bc-47cf-9846-5dc9a81790a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.review_teaser
+    - field.field.node.movie.body
+    - field.field.node.movie.field_buy_on_dvd
+    - field.field.node.movie.field_geners
+    - field.field.node.movie.field_imdb
+    - field.field.node.movie.field_in_cinemas
+    - field.field.node.movie.field_movieimage
+    - field.field.node.movie.field_netflix
+    - field.field.node.movie.field_release_date
+    - field.field.node.movie.field_review
+    - field.field.node.movie.field_reviewtext
+    - field.field.node.movie.field_traillers
+    - image.style.300x200_300_200_
+    - node.type.movie
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.movie.review_teaser
+targetEntityType: node
+bundle: movie
+mode: review_teaser
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_buy_on_dvd:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_in_cinemas:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_movieimage:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: 300x200_300_200_
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_netflix:
+    type: link
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_traillers:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_geners: true
+  field_imdb: true
+  field_release_date: true
+  field_review: true
+  field_reviewtext: true
+  langcode: true
+  links: true

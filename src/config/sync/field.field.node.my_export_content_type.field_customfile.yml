@@ -1,0 +1,27 @@
+uuid: 62a7c61b-4a26-44e0-827f-497ab96d39bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_customfile
+    - node.type.my_export_content_type
+  module:
+    - file
+id: node.my_export_content_type.field_customfile
+field_name: field_customfile
+entity_type: node
+bundle: my_export_content_type
+label: customfile
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: txt
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

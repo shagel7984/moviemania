@@ -1,0 +1,14 @@
+# Add some local task links to facilitate navigation.
+
+custom_config_entity.add_action:
+  route_name: entity.myconfigentity.add_form
+  title: 'Add My Config Entity'
+  appears_on:
+    - entity.myconfigentity.collection
+
+custom_config_entity.list_action:
+  route_name: entity.myconfigentity.collection
+  title: 'List My Config Entity'
+  appears_on:
+    - entity.myconfigentity.add_form
+    - entity.myconfigentity.edit_form
