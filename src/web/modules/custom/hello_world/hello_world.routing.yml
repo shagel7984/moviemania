@@ -3,7 +3,11 @@ hello_world:
     defaults:
         _controller: '\Drupal\hello_world\Controller\CustomController::customfunction'
     requirements:
-        _permission: 'access content'
+        _custom_access_check: 'TRUE'
+        #_csrf_token: 'TRUE'
+    #requirements:
+        #_custom_access: '\Drupal\hello_world\Controller\CustomController::access'
+        #_permission: 'access content'
 
     #path: '/hello/world'
     #defaults:

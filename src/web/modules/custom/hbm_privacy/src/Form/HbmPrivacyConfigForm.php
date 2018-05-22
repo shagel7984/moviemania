@@ -113,6 +113,12 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
       '#submit' => [[$this, 'updatePrivacyInformation']],
     ];
 
+    $form['privacy_page_link'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('HBM privacy page link'),
+      '#default_value' => $config->get('privacy_page_link'),
+    );
+
     $form['privacy_url'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('HBM privacy url'),
@@ -131,6 +137,26 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   public function validateForm(array &$form, FormStateInterface $form_state)
   {
 
+    /**
+     * Checks if the privacy page link is not empty and if the link not already exists
+     */
+    if($form_state->isValueEmpty('privacy_page_link')){
+      $form_state->setErrorByName('privacy_page_link', t('the privay url must not be empty'));
+    }else{
+      $RoutePath = '/' . $form_state->getValue('privacy_page_link');
+      $url_object = \Drupal::service('path.validator')->getUrlIfValid($RoutePath);
+
+      if ($url_object){
+        $route_name = $url_object->getRouteName();
+        if ($route_name !== 'hbm_privacy.route'){
+          $form_state->setErrorByName('privay_page_link', t('The HBM the route already exists'));
+        }
+      }
+    }
+
+    /**
+     * Checks if the privacy url field is not empty and if it is a valid url
+     */
     if($form_state->isValueEmpty('privacy_url')){
       $form_state->setErrorByName('privay_url', t('the privay url must not be empty'));
     }else{
@@ -171,8 +197,11 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
     $this->configFactory->getEditable('hbm_privacy.settings')
       // Set the submitted configuration setting
       ->set('privacy_url', $form_state->getValue('privacy_url'))
+      ->set('privacy_page_link', $form_state->getValue('privacy_page_link'))
       ->save();
 
     parent::submitForm($form, $form_state);
+
+    \Drupal::service("router.builder")->rebuild();
   }
 }

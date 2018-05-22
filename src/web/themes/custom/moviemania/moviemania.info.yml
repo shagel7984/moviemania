@@ -18,6 +18,7 @@ regions:
 libraries:
   - moviemania/moviemania
   - moviemania/bootstrap
+  - moviemania/hello_world_clock
 #  - icecream/emoji
 #libraries-override:
 #    # Replace the core modernizr library with our custom build.

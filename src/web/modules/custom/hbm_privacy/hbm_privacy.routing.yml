@@ -6,9 +6,14 @@ hbm_privacy.settings:
   requirements:
     _permission: 'administer site configuration'
 
-hbm_privacy:
-    path: '/datenschutz'
-    defaults:
-        _controller: '\Drupal\hbm_privacy\Controller\HbmPrivacyController::showHbmPrivacy'
-    requirements:
-        _permission: 'access content'
+
+route_callbacks:
+  - '\Drupal\hbm_privacy\Routing\HbmPrivacyRouting::routes'
+
+
+#hbm_privacy:
+#    path: '/datenschutz'
+#    defaults:
+#        _controller: '\Drupal\hbm_privacy\Controller\HbmPrivacyController::showHbmPrivacy'
+#    requirements:
+#        _permission: 'access content'

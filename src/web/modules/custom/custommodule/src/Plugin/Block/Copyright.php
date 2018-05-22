@@ -55,7 +55,6 @@ class Copyright extends BlockBase {
     ];
   }
 
-
   protected function blockAccess(AccountInterface $account)
   {
     $route_name = \Drupal::routeMatch()->getRouteName();

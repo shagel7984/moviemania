@@ -31,12 +31,21 @@ class HbmPrivacyController extends ControllerBase {
   public function showHbmPrivacy() {
     $hbmPrivacy = $this->hbmPrivacyService->providePrivacyData();
 
-    $content = [
+    $build = [
       '#theme' => 'hbm_privacy',
       '#hbm_privacy' => $hbmPrivacy,
     ];
 
-    return $content;
+    $noindex = [
+      '#tag' => 'meta',
+      '#attributes' => [
+        'name' => 'robots',
+        'content' => 'noindex,follow',
+      ],
+    ];
+    $build['#attached']['html_head'][] = [$noindex, 'noindex'];
+
+    return $build;
   }
 
   /**

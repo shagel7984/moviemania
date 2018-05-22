@@ -2,6 +2,8 @@
 
 namespace Drupal\hello_world\Controller;
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Logger\LoggerChannelFactory;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -37,14 +39,13 @@ class CustomController extends ControllerBase {
     $resp = $this->helloService->sayHello('sebastian');
     $this->loggerFactoryService->get('')->debug($resp);
 
-
-    $config1 = \Drupal::config('custom_config_entity.myconfigentity.my_custom_config_entity');
+    //$config1 = \Drupal::config('custom_config_entity.myconfigentity.my_custom_config_entity');
     //print "CONFIG 1".$config1->get('label');echo "<br/>";
-    $config2 =  \Drupal::entityTypeManager()->getStorage('myconfigentity')->load('my_custom_config_entity');
+    //$config2 =  \Drupal::entityTypeManager()->getStorage('myconfigentity')->load('my_custom_config_entity');
     //print "CONFIG 2".$config2->get('label');echo "<br/>";
 
 
-    $mymarkuparray = array(
+   /* $mymarkuparray = array(
       '#title' => 'Hello World!',
       '#markup' => 'Here is some content.',
     );
@@ -52,8 +53,34 @@ class CustomController extends ControllerBase {
     $module_handler = \Drupal::moduleHandler();
     $module_handler->invokeAll('hello_world_changecontent',array(&$mymarkuparray));
 
-    return $mymarkuparray;
+    return $mymarkuparray;*/
 
+    $mymarkuparray = [
+      'test1' => [
+        '#title' => 'Hello Clock',
+        '#markup' => '<div class="salutation">Salutation</div>',
+      ],
+      'test2' => [
+        '#title' => 'Hello World!',
+        '#markup' => 'Here is some content. *',
+      ],
+      'test3' =>[
+        '#attached' =>  [
+          'drupalSettings' => [
+            'hello_world' => [
+              'hello_world_clock' => [
+                'afternoon' => 'testmeifyoucan'
+              ]
+            ]
+          ],
+          /*'library' => [
+            'moviemania/hello_world_clock'
+          ]*/
+        ]
+      ]
+    ];
+
+    return $mymarkuparray;
   }
 
   public static function create(ContainerInterface $container)
@@ -64,5 +91,19 @@ class CustomController extends ControllerBase {
     return new static($helloService,$goodbyeService,$loggerFactoryService);
   }
 
+  /**
+   * Checks access for this controller.
+   */
+  public function access() {
+    // Don’t allow access before Friday, November 25, 2016.
+    /*$today = date("Y-m-d H:i:s");
+    $date = "2016-11-25 00:00:00";
+    if ($date < $today) {
+      // Return 403 Access Denied page.
+      return AccessResult::forbidden();
+    }*/
+    //return AccessResult::forbidden();
+    return AccessResult::allowed();
+  }
 
 }

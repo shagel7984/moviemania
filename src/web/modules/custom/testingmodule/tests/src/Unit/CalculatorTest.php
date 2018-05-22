@@ -1,8 +1,10 @@
 <?php
 namespace Drupal\Tests\testingmodule;
 
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\testingmodule\Calculator;
 use Drupal\Tests\UnitTestCase;
+use Drupal\user\UserInterface;
 
 /**
  * Class CalculatorTest
@@ -66,4 +68,5 @@ class CalculatorTest extends UnitTestCase{
     $calculator = new Calculator(10,5);
     $this->assertEquals(2, $calculator->divide());
   }
+
 }

@@ -5,3 +5,6 @@ hbm_privacy.settings:
     privacy_url:
       type: string
       label: 'HBM privacy url'
+    privacy_page_link:
+      type: string
+      label: 'HBM privacy page link'

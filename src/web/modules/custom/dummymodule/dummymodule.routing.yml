@@ -1,0 +1,6 @@
+dummymodule.hello:
+  path: '/dummymodule'
+  defaults:
+    _controller: '\Drupal\dummymodule\Controller\DummyController::dummyfunction'
+  requirements:
+    _permission: 'access content'
