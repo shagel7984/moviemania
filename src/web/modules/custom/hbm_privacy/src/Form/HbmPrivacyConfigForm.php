@@ -10,9 +10,11 @@ use Drupal\hbm_privacy\HbmServices\HbmPrivacyService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class HbmPrivacyConfigForm
+ * Class HbmPrivacyConfigForm.
+ *
  * @package Drupal\hbm_privacy\Form
- * provides a configuration form to save the privacy url an
+ *
+ * Provides a configuration form to save the privacy url an.
  */
 class HbmPrivacyConfigForm extends ConfigFormBase {
 
@@ -32,20 +34,28 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
 
   /**
    * HbmPrivacyConfigForm constructor.
-   * @param ConfigFactoryInterface $config_factory
-   * @param StateInterface $state
-   * @param HbmPrivacyService $hbmPrivacyService
+   *
+   * @param Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   Drupal\Core\Config\ConfigFactoryInterface $config_factory.
+   * @param Drupal\Core\State\StateInterface $state
+   *   Drupal\Core\State\StateInterface $state.
+   * @param Drupal\hbm_privacy\HbmServices\HbmPrivacyService $hbmPrivacyService
+   *   Drupal\hbm_privacy\HbmServices\HbmPrivacyService $hbmPrivacyService.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, StateInterface $state, HbmPrivacyService $hbmPrivacyService){
+  public function __construct(ConfigFactoryInterface $config_factory, StateInterface $state, HbmPrivacyService $hbmPrivacyService) {
     parent::__construct($config_factory);
     $this->state = $state;
     $this->hbmPrivacyService = $hbmPrivacyService;
-
   }
 
   /**
-   * @param ContainerInterface $container
+   * Function create()
+   *
+   * @param Drupal\Core\Config\ContainerInterface $container
+   *   Drupal\Core\Config\ContainerInterface $container.
+   *
    * @return static
+   *   Returns the dependencies
    */
   public static function create(ContainerInterface $container) {
     return new static(
@@ -56,14 +66,20 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   }
 
   /**
+   * Function getFormId()
+   *
    * @return string
+   *   Returns the FormId
    */
   public function getFormId() {
     return 'hbm_privacy_form';
   }
 
   /**
+   * Function getEditableConfigNames()
+   *
    * @return array
+   *   Returns the EditableConfigNames
    */
   protected function getEditableConfigNames() {
     return [
@@ -72,9 +88,15 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   }
 
   /**
+   * Function buildForm()
+   *
    * @param array $form
-   * @param FormStateInterface $form_state
+   *   The Form.
+   * @param Drupal\Core\Form\FormStateInterface $form_state
+   *   The Form State.
+   *
    * @return array
+   *   Retuns the Buildform
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('hbm_privacy.settings');
@@ -89,7 +111,7 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
     $statusMessage = !empty($statusMessage) ? $statusMessage : 'no status info available yet';
 
     $args = [
-      '%statusMessage' => $statusMessage
+      '%statusMessage' => $statusMessage,
     ];
 
     $form['status']['last'] = [
@@ -97,9 +119,7 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
       '#markup' => $this->t('HBM Service: %statusMessage', $args),
     ];
 
-    /**
-     * Manual HBM Privacy Information Update Button
-     */
+    /* Manual HBM Privacy Information Update Button */
     $form['hbm_privacy_information_update'] = [
       '#type' => 'details',
       '#title' => $this->t('Update privacy information'),
@@ -113,89 +133,92 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
       '#submit' => [[$this, 'updatePrivacyInformation']],
     ];
 
-    $form['privacy_page_link'] = array(
+    $form['privacy_page_link'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('HBM privacy page link'),
+      '#title' => $this->t('HBM Privacy Page Link (z.B. datenschutz)'),
       '#default_value' => $config->get('privacy_page_link'),
-    );
+    ];
 
-    $form['privacy_url'] = array(
+    $form['privacy_url'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('HBM privacy url'),
+      '#title' => $this->t('HBM Privacy Url (z.B. https://cdn.datenschutz.burda.com/ID.json)'),
       '#default_value' => $config->get('privacy_url'),
-    );
+    ];
 
     return parent::buildForm($form, $form_state);
   }
 
   /**
+   * Function validateForm()
+   * Checks if the privacy url is not empty and if its starts with http:// or https://.
+   *
    * @param array $form
-   * @param FormStateInterface $form_state
-   * Checks if the privacy url is not empty
-   * and if its starts with http:// or https://
+   *   The Form.
+   * @param Drupal\Core\Form\FormStateInterface $form_state
+   *   The Form State.
    */
-  public function validateForm(array &$form, FormStateInterface $form_state)
-  {
-
-    /**
-     * Checks if the privacy page link is not empty and if the link not already exists
-     */
-    if($form_state->isValueEmpty('privacy_page_link')){
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    /* Checks if the privacy page link is not empty and if the link not already exists */
+    if ($form_state->isValueEmpty('privacy_page_link')) {
       $form_state->setErrorByName('privacy_page_link', t('the privay url must not be empty'));
-    }else{
-      $RoutePath = '/' . $form_state->getValue('privacy_page_link');
-      $url_object = \Drupal::service('path.validator')->getUrlIfValid($RoutePath);
+    }
+    else {
+      $routePath = '/' . $form_state->getValue('privacy_page_link');
+      $url_object = \Drupal::service('path.validator')->getUrlIfValid($routePath);
 
-      if ($url_object){
+      if ($url_object) {
         $route_name = $url_object->getRouteName();
-        if ($route_name !== 'hbm_privacy.route'){
+        if ($route_name !== 'hbm_privacy.route') {
           $form_state->setErrorByName('privay_page_link', t('The HBM the route already exists'));
         }
       }
     }
 
-    /**
-     * Checks if the privacy url field is not empty and if it is a valid url
-     */
-    if($form_state->isValueEmpty('privacy_url')){
+    /* Checks if the privacy url field is not empty and if it is a valid url */
+    if ($form_state->isValueEmpty('privacy_url')) {
       $form_state->setErrorByName('privay_url', t('the privay url must not be empty'));
-    }else{
-      if (!$this->is_url($form_state->getValue('privacy_url'))){
+    }
+    else {
+      if (!$this->is_url($form_state->getValue('privacy_url'))) {
         $form_state->setErrorByName('privay_url', t('The HBM privacy url must start with http or https and has to be a valid url'));
       }
     }
+
   }
 
   /**
-   * Check if entered value is a valid url
+   * Check if entered value is a valid url.
    */
-  private function is_url($uri){
-    if(preg_match( '/^(http|https):\\/\\/[a-z0-9_]+([\\-\\.]{1}[a-z_0-9]+)*\\.[_a-z]{2,5}'.'((:[0-9]{1,5})?\\/.*)?$/i' ,$uri)){
-      return true;
+  private function is_url($uri) {
+    if (preg_match('/^(http|https):\\/\\/[a-z0-9_]+([\\-\\.]{1}[a-z_0-9]+)*\\.[_a-z]{2,5}'.'((:[0-9]{1,5})?\\/.*)?$/i' , $uri)) {
+      return TRUE;
     }
-    else{
-      return false;
+    else {
+      return FALSE;
     }
   }
 
   /**
-   * updatePrivacyInformation - executes the hbmPrivacyService->getPrivacyData()
+   * UpdatePrivacyInformation - executes the hbmPrivacyService->getPrivacyData()
    */
   public function updatePrivacyInformation() {
     $statusMessage = $this->hbmPrivacyService->getPrivacyData();
-    drupal_set_message($statusMessage['lastExecutionTime'] .' - '. $statusMessage['status']);
+    drupal_set_message($statusMessage['lastExecutionTime'] . ' - ' . $statusMessage['status']);
   }
 
-
   /**
+   * Function submitForm().
+   *
    * @param array $form
-   * @param FormStateInterface $form_state
+   *   The Form.
+   * @param Drupal\Core\Form\FormStateInterface $form_state
+   *   The Form State.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    // Retrieve the configuration
+    /* Retrieve the configuration */
     $this->configFactory->getEditable('hbm_privacy.settings')
-      // Set the submitted configuration setting
+      /* Set the submitted configuration setting */
       ->set('privacy_url', $form_state->getValue('privacy_url'))
       ->set('privacy_page_link', $form_state->getValue('privacy_page_link'))
       ->save();
@@ -204,4 +227,5 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
 
     \Drupal::service("router.builder")->rebuild();
   }
+
 }

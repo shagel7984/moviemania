@@ -1,5 +1,5 @@
 hbm_privacy.settings:
   title: 'HBM Privacy Settings'
   parent: system.admin_config_system
-  description: 'HBM Privacy Settings page link'
+  description: 'Change HBM Privacy Settings here.'
   route_name: hbm_privacy.settings

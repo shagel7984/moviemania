@@ -1,29 +1,31 @@
- <?php
- /**
-  * @file
-  * uses the hbmprivacy service
-  */
+<?php
 
- /**
-  * Implements hook_cron().
-  * uses the Drupal\hbm_privacy\HbmServices\HbmPrivacyService
-  * to retrieve the content of a url
-  */
+/**
+ * @file
+ * Uses the hbmprivacy service.
+ */
+
+/**
+ * Implements hook_cron().
+ *
+ * Uses the Drupal\hbm_privacy\HbmServices\HbmPrivacyService.
+ * Retrieve the content of a url.
+ */
 function hbm_privacy_cron() {
   $hbmPrivacyService = \Drupal::service('hbm_privacy.hbmprivacyservice');
   $statusMessage = $hbmPrivacyService->getPrivacyData();
-  \Drupal::logger('hbm_privacy')->notice($statusMessage['lastExecutionTime'] .' - '. $statusMessage['status']);
+  \Drupal::logger('hbm_privacy')->notice($statusMessage['lastExecutionTime'] . ' - ' . $statusMessage['status']);
 }
 
- /**
-  * Implements hook_theme() to add the template definition.
-  **/
- function hbm_privacy_theme($existing, $type, $theme, $path) {
-   return [
-     'hbm_privacy' => [
-       'variables' => [
-         'hbm_privacy' => NULL,
-       ],
-     ],
-   ];
- }
+/**
+ * Implements hook_theme() to add the template definition.
+ */
+function hbm_privacy_theme() {
+  return [
+    'hbm_privacy' => [
+      'variables' => [
+        'hbm_privacy' => NULL,
+      ],
+    ],
+  ];
+}
