@@ -5,6 +5,7 @@ namespace Drupal\hbm_privacy\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\hbm_privacy\HbmServices\HbmPrivacyService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Class HbmPrivacyController.
@@ -42,32 +43,34 @@ class HbmPrivacyController extends ControllerBase {
 
     $privacyContent = $this->hbmPrivacyService->providePrivacyData();
 
-    $build = [
-      '#theme' => 'hbm_privacy',
-      '#hbm_privacy' => $privacyContent,
-    ];
+    if (isset($privacyContent['success']) && $privacyContent['success']) {
+      $build = [
+        '#theme' => 'hbm_privacy',
+        '#hbm_privacy' => $privacyContent['content'],
+      ];
 
-    $noindex = [
-      '#tag' => 'meta',
-      '#attributes' => [
-        'name' => 'robots',
-        'content' => 'noindex,follow',
-      ],
-    ];
+      $noindex = [
+        '#tag' => 'meta',
+        '#attributes' => [
+          'name' => 'robots',
+          'content' => 'noindex,follow',
+        ],
+      ];
 
-    $build['#attached']['html_head'][] = [$noindex, 'noindex'];
+      $build['#attached']['html_head'][] = [$noindex, 'noindex'];
 
-    return $build;
+      return $build;
+    }
+    else {
+      throw new NotFoundHttpException();
+    }
+
   }
 
   /**
-   * Dependency Injection.
+   * Function create().
    *
-   * @param Symfony\Component\DependencyInjection\ContainerInterface $container
-   *   The DependencyInjection ContainerInterface.
-   *
-   * @return static
-   *   Returns the dependencies
+   * @inheritdoc
    */
   public static function create(ContainerInterface $container) {
     $hbmPrivacyService = $container->get('hbm_privacy.hbmprivacyservice');

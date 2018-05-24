@@ -9,7 +9,7 @@ HBM Privacy Configurations:
         -> Administration -> Configuration -> System (/admin/config/system/hbm-privacy-form)
    
    - If you dont updtae privacy information manually the hbm_privacy.module -> hbm_privacy_cron() 
-     will upadte privacy information if cron is executed 
+     will update privacy information if cron is executed 
    
 
 if the module is installed, there will be a new entry "HBM Privacy Settings" shown in admin/config -> System 

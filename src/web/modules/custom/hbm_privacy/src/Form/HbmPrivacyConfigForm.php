@@ -51,11 +51,7 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   /**
    * Function create()
    *
-   * @param Drupal\Core\Config\ContainerInterface $container
-   *   Drupal\Core\Config\ContainerInterface $container.
-   *
-   * @return static
-   *   Returns the dependencies
+   * @inheritdoc
    */
   public static function create(ContainerInterface $container) {
     return new static(
@@ -66,20 +62,18 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   }
 
   /**
-   * Function getFormId()
+   * Function getFormId().
    *
-   * @return string
-   *   Returns the FormId
+   * @inheritdoc
    */
   public function getFormId() {
     return 'hbm_privacy_form';
   }
 
   /**
-   * Function getEditableConfigNames()
+   * Function getEditableConfigNames().
    *
-   * @return array
-   *   Returns the EditableConfigNames
+   * @inheritdoc
    */
   protected function getEditableConfigNames() {
     return [
@@ -88,15 +82,9 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   }
 
   /**
-   * Function buildForm()
+   * Function buildForm().
    *
-   * @param array $form
-   *   The Form.
-   * @param Drupal\Core\Form\FormStateInterface $form_state
-   *   The Form State.
-   *
-   * @return array
-   *   Retuns the Buildform
+   * @inheritdoc
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('hbm_privacy.settings');
@@ -107,7 +95,7 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
       '#open' => TRUE,
     ];
 
-    $statusMessage = \Drupal::state()->get('hbm_privacy_service.statusmessage');
+    $statusMessage = $this->state->get('hbm_privacy_service.statusmessage');
     $statusMessage = !empty($statusMessage) ? $statusMessage : 'no status info available yet';
 
     $args = [
@@ -149,13 +137,9 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   }
 
   /**
-   * Function validateForm()
-   * Checks if the privacy url is not empty and if its starts with http:// or https://.
+   * Function validateForm().
    *
-   * @param array $form
-   *   The Form.
-   * @param Drupal\Core\Form\FormStateInterface $form_state
-   *   The Form State.
+   * @inheritdoc
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     /* Checks if the privacy page link is not empty and if the link not already exists */
@@ -209,10 +193,7 @@ class HbmPrivacyConfigForm extends ConfigFormBase {
   /**
    * Function submitForm().
    *
-   * @param array $form
-   *   The Form.
-   * @param Drupal\Core\Form\FormStateInterface $form_state
-   *   The Form State.
+   * @inheritdoc
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
