@@ -5,7 +5,7 @@
     attach: function (context, settings){
 
       function test(){
-        console.log(settings);
+        console.log("Settings:"+settings);
       }
 
       function ticker(){

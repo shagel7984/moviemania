@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\Tests\testingmodule;
+namespace Drupal\Tests\testingmodule\Unit;
 
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\testingmodule\Calculator;
@@ -25,11 +25,18 @@ class CalculatorTest extends UnitTestCase{
    */
   protected $calculatorTwo;
 
+  /*
+   * @var Drupal\user\Entity\User
+   */
+  protected $user;
+
 
   public function setUp(){
     parent::setUp();
     $this->calculatorOne = new Calculator(10,5);
     $this->calculatorTwo = new Calculator(10,10);
+    $this->user = $this->getMockBuilder('Drupal\user\Entity\User')->getMock();
+
   }
    
   /**
